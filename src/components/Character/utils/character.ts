@@ -10,7 +10,7 @@ const setCharacter = (
 ) => {
   const loader = new GLTFLoader();
   const dracoLoader = new DRACOLoader();
-  dracoLoader.setDecoderPath("/draco/");
+  dracoLoader.setDecoderPath("./draco/");
   loader.setDRACOLoader(dracoLoader);
 
   const loadCharacter = () => {
@@ -20,7 +20,7 @@ const setCharacter = (
         let encryptedBlob: ArrayBuffer | null = null;
         try {
           encryptedBlob = await decryptFile(
-            "/models/character_female.enc",
+            "./models/character.enc",
             "Character3D#@"
           );
           console.info("Loaded female character model (character_female.enc).");
